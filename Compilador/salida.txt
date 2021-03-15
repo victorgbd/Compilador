@@ -1,0 +1,70 @@
+
+// Declaracion de Variable
+ADDI 
+T1, 
+ZERO, 
+ZERO
+SW 
+T1, 0(
+ESP)
+ADDI 
+ESP, 
+ESP, -4
+
+// Declaracion de Variable
+ADDI 
+T1, 
+ZERO, 
+ZERO
+SW 
+T1, 0(
+ESP)
+ADDI 
+ESP, 
+ESP, -4
+
+// Statement IF
+LW 
+T1, -0(
+FP)
+LW 
+T2, -4(
+FP)
+BEQ 
+T1, 
+T2, ETIQUETA0
+ADDI 
+T1, 
+ZERO, 0
+J ETIQUETA1
+ETIQUETA0:
+ADDI 
+T1, 
+ZERO, 1
+ETIQUETA1:
+ADDI 
+T2, 
+ZERO, 
+ZERO
+BEQ 
+T1, 
+T2, ETIQUETA2
+// Statement Asignacion
+LW 
+T1, -4(
+FP)
+SW 
+T1, -0(
+FP)
+
+J ETIQUETA3
+ETIQUETA2: 
+// Statement Asignacion
+LW 
+T1, -0(
+FP)
+SW 
+T1, -4(
+FP)
+
+ETIQUETA3: 
