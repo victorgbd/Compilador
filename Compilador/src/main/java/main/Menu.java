@@ -90,6 +90,9 @@ public class Menu extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         campoCodigoIntermedio = new javax.swing.JTextArea();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        campoCodigoResultante = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Compilador");
@@ -166,6 +169,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(jToolBar1, java.awt.BorderLayout.PAGE_START);
 
         jTabbedPane1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         areaTexto.setColumns(20);
         areaTexto.setRows(5);
@@ -235,6 +239,29 @@ public class Menu extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("   [ Codigo Intermedio ]   ", jPanel5);
+
+        campoCodigoResultante.setColumns(20);
+        campoCodigoResultante.setRows(5);
+        jScrollPane4.setViewportView(campoCodigoResultante);
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 745, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("   [ Codigo Resultante ]   ", jPanel6);
 
         jPanel1.add(jTabbedPane1, java.awt.BorderLayout.CENTER);
 
@@ -353,7 +380,7 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         
         File direccion = selector.getSelectedFile();
         try {
-            direccion = new File(direccion.getAbsolutePath()+".o++");
+            direccion = new File(direccion.getAbsolutePath()+".txt");
             direccion.createNewFile();
         } catch (IOException io) {            
             JOptionPane.showMessageDialog(this, "Se genero un error al crear el fichero nuevo\n\n"+io);
@@ -414,6 +441,7 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextArea campoArbol;
     private javax.swing.JTextArea campoCodigoIntermedio;
+    private javax.swing.JTextArea campoCodigoResultante;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -423,9 +451,11 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JToolBar jToolBar1;
